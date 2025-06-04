@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Edit Task{% endblock %}
+{% block content %}
+<div class="max-w-lg mx-auto bg-white p-6 rounded shadow">
+  <h2 class="text-xl font-bold mb-4">Edit Task</h2>
+  <form method="POST">
+    <input name="title" value="{{ task.title }}" class="w-full p-2 border rounded mb-4" required>
+    <textarea name="description" class="w-full p-2 border rounded mb-4">{{ task.description }}</textarea>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+    <a href="{{ url_for('dash.dashboard') }}" class="ml-4 text-gray-600">Cancel</a>
+  </form>
+</div>
+{% endblock %}

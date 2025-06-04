@@ -1,0 +1,32 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Python egg
+*.egg-info/
+dist/
+build/
+
+# Render deploy cache (optional)
+.render/

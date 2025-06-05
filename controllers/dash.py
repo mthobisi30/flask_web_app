@@ -34,7 +34,7 @@ def edit_task(task_id):
         task.description = request.form.get("description", "").strip()
         return redirect(url_for("dash.dashboard"))
 
-    return render_template("edit_task.html", task=task)
+    return render_template("tasks.html", task=task)
 
 @dash_bp.route("/delete/<int:task_id>", methods=["POST"])
 @login_required

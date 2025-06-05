@@ -16,6 +16,12 @@ ________________________________________________________________
 - MVC architecture (Models, Views, Controllers)
 - Deployed for free on [Render](https://render.com)
 
+________________________________________________________________
+
+## Default Login Credentials
+
+- username: admin
+- Password: password123
 
 ________________________________________________________________
 

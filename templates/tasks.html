@@ -1,13 +1,20 @@
 {% extends "layout.html" %}
 {% block title %}Edit Task{% endblock %}
 {% block content %}
-<div class="max-w-lg mx-auto bg-white p-6 rounded shadow">
-  <h2 class="text-xl font-bold mb-4">Edit Task</h2>
-  <form method="POST">
-    <input name="title" value="{{ task.title }}" class="w-full p-2 border rounded mb-4" required>
-    <textarea name="description" class="w-full p-2 border rounded mb-4">{{ task.description }}</textarea>
-    <button class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
-    <a href="{{ url_for('dash.dashboard') }}" class="ml-4 text-gray-600">Cancel</a>
+<div class="max-w-lg mx-auto bg-white/5 p-6 rounded-xl shadow-md backdrop-blur-md">
+  <h2 class="text-2xl font-bold mb-4 text-white">Edit Task</h2>
+  <form method="POST" class="space-y-4">
+    <input name="title" value="{{ task.title }}" required
+      class="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <textarea name="description"
+      class="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">{{ task.description }}</textarea>
+    <div class="flex justify-between items-center">
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold shadow transition">
+        Save
+      </button>
+      <a href="{{ url_for('dash.dashboard') }}" class="text-gray-300 hover:underline">Cancel</a>
+    </div>
   </form>
 </div>
 {% endblock %}
+

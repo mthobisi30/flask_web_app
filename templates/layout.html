@@ -1,30 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}Task App{% endblock %}</title>
+
+  <!-- Tailwind CSS + custom config -->
   <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        },
-      },
-    },
-  };
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          backgroundImage: {
+            'cool-gradient': "linear-gradient(to right top, #1e293b, #0f172a)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Feather icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <div class="container mx-auto mt-10 px-4">
+
+<body class="bg-cool-gradient text-white font-sans min-h-screen">
+  <!-- Optional dark mode toggle -->
+  <div class="text-right p-4">
+    <button onclick="document.documentElement.classList.toggle('dark')" class="text-xs text-gray-300 hover:text-white">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Page content -->
+  <div class="container mx-auto px-4 py-6">
     {% block content %}{% endblock %}
   </div>
-  <script>
-  feather.replace(); // for Feather icons
-</script>
 
+  <!-- Icons -->
+  <script>feather.replace();</script>
 </body>
 </html>

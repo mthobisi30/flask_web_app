@@ -36,7 +36,7 @@ def edit_task(task_id):
 
     return render_template("edit_task.html", task=task)
 
-@dash_bp.route("/delete/<int:task_id>")
+@dash_bp.route("/delete/<int:task_id>", methods=["POST"])
 @login_required
 def delete_task(task_id):
     Task.delete(task_id)
@@ -54,3 +54,4 @@ def api_tasks():
         }
         for t in Task.tasks
     ])
+

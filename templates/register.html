@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% block title %}Register{% endblock %}
 {% block content %}
-<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
-    <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Create an Account</h2>
+<div class="min-h-screen flex items-center justify-center bg-cool-gradient px-4">
+  <div class="bg-white/5 backdrop-blur-lg rounded-xl shadow-md w-full max-w-md p-8">
+    <h2 class="text-3xl font-bold mb-6 text-center text-white">Create an Account</h2>
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}
-        <div class="mb-4 text-red-600 text-sm">
+        <div class="mb-4 text-red-400 text-sm">
           {% for message in messages %}
             <p>{{ message }}</p>
           {% endfor %}
@@ -17,23 +17,38 @@
 
     <form method="POST" action="{{ url_for('auth.register') }}" class="space-y-5">
       <div class="relative">
-        <input type="text" name="username" placeholder="Username" class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" required>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          class="w-full pl-10 pr-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+          required
+        />
         <i data-feather="user-plus" class="absolute left-3 top-2.5 text-gray-400"></i>
       </div>
 
       <div class="relative">
-        <input type="password" name="password" placeholder="Password" class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" required>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="w-full pl-10 pr-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+          required
+        />
         <i data-feather="lock" class="absolute left-3 top-2.5 text-gray-400"></i>
       </div>
 
-      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold">
+      <button
+        type="submit"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold flex justify-center items-center"
+      >
         <i data-feather="user-check" class="inline-block mr-2 -mt-1"></i> Register
       </button>
     </form>
 
-    <p class="mt-6 text-center text-sm text-gray-600">
+    <p class="mt-6 text-center text-sm text-gray-400">
       Already have an account?
-      <a href="{{ url_for('auth.login') }}" class="text-blue-600 hover:underline">Login</a>
+      <a href="{{ url_for('auth.login') }}" class="text-blue-400 hover:underline">Login</a>
     </p>
   </div>
 </div>

@@ -47,7 +47,6 @@ project/
 ├── static/                # CSS, JS, assets
 ├── requirements.txt       # Python dependencies
 ├── Procfile               # Deployment config for Render
-├── runtime.txt            # Python version (optional)
 ├── README.md              # You're reading it!
 ```
 
